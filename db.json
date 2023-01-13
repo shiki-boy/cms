@@ -4,11 +4,11 @@
     "description": "<p>description rrrrr</p>",
     "button1": {
       "bgColor": "coral",
-      "textColor": "black"
+      "textColor": "white"
     },
     "button2": {
-      "bgColor": "#4CAF50",
-      "textColor": "white"
+      "bgColor": "coral",
+      "textColor": "black"
     }
   }
 }

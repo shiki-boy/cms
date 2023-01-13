@@ -1,37 +1,43 @@
 import classNames from 'classnames'
-import { useState } from 'react'
 
 import './Button.scss'
 
 import TooltipEdit from '../TooltipEdit'
+import useWebsiteStore from '@/store/website'
 
-const Button = ( { value, isEditable = false } ) => {
-  const [ data, setData ] = useState( value )
+const Button = ( { isEditable = false, btnType } ) => {
+  const button = useWebsiteStore( ( state ) => state[btnType] )
+
+  const changeButton = useWebsiteStore( ( state ) => state.changeButton )
 
   return (
     <>
       <button
         className={ classNames( 'button', { editable: isEditable } ) }
         style={ {
-          ['--bg-color']: data.bgColor,
-          ['--btn-color']: data.textColor,
+          ['--bg-color']: button.bgColor,
+          ['--btn-color']: button.textColor,
         } }
       >
         Green
         {isEditable && (
           <TooltipEdit
             changeBg={ ( bgColor ) =>
-              setData( ( old ) => ( {
-                ...old,
-                bgColor,
-              } ) )
+              changeButton( {
+                [btnType]: {
+                  ...button,
+                  bgColor,
+                },
+              } )
             }
-            changeText={ ( textColor ) =>
-              setData( ( old ) => ( {
-                ...old,
-                textColor,
-              } ) )
-            }
+            changeText={ ( textColor ) => {
+              changeButton( {
+                [btnType]: {
+                  ...button,
+                  textColor,
+                },
+              } )
+            } }
           />
         )}
       </button>

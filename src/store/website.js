@@ -44,6 +44,19 @@ const useWebsiteStore = create( ( set ) => ( {
     }
   },
 
+  changeButton: async ( payloadData ) => {
+    try {
+      await httpClient( {
+        url: 'http://localhost:9000/candidate',
+        method: 'patch',
+        data: payloadData,
+      } )
+
+      return set( () => ( payloadData ) )
+    } catch ( error ) {
+      console.log( error )
+    }
+  },
 } ) )
 
 export default useWebsiteStore

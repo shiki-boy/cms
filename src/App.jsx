@@ -52,6 +52,7 @@ const Page = () => {
           bgColor: '#4CAF50',
           textColor: 'black',
         } }
+        btnType='button1'
         isEditable
       />
 
@@ -60,6 +61,7 @@ const Page = () => {
           bgColor: 'coral',
           textColor: 'white',
         } }
+        btnType='button2'
         isEditable
       />
     </>
