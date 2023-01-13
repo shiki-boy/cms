@@ -16,35 +16,7 @@ const useWebsiteStore = create( ( set ) => ( {
 
   init: ( data ) => set( () => data ),
 
-  changeHeadline: async ( payloadData ) => {
-    try {
-      await httpClient( {
-        url: 'http://localhost:9000/candidate',
-        method: 'patch',
-        data: { headline: payloadData },
-      } )
-
-      return set( () => ( { headline: payloadData } ) )
-    } catch ( error ) {
-      console.log( error )
-    }
-  },
-
-  changeDescription: async ( payloadData ) => {
-    try {
-      await httpClient( {
-        url: 'http://localhost:9000/candidate',
-        method: 'patch',
-        data: { description: payloadData },
-      } )
-
-      return set( () => ( { description: payloadData } ) )
-    } catch ( error ) {
-      console.log( error )
-    }
-  },
-
-  changeButton: async ( payloadData ) => {
+  changeWebsiteData: async ( payloadData ) => {
     try {
       await httpClient( {
         url: 'http://localhost:9000/candidate',

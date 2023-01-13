@@ -8,11 +8,9 @@ import useWebsiteStore from '@/store/website'
 const Headline = () => {
   const headline = useWebsiteStore( ( state ) => state.headline )
 
-  const changeHeadline = useWebsiteStore( ( state ) => state.changeHeadline )
+  const changeWebsiteData = useWebsiteStore( ( state ) => state.changeWebsiteData )
 
   const [ isEditing, setIsEditing ] = useState( false )
-
-  // const [ value, setValue ] = useState( headline )
 
   return (
     <>
@@ -27,7 +25,7 @@ const Headline = () => {
       {isEditing && (
         <RichTextEditor
           value={ headline }
-          save={ changeHeadline }
+          save={ ( data ) => changeWebsiteData( { headline: data } ) }
           onBlur={ () => setIsEditing( false ) }
         />
       )}

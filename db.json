@@ -1,13 +1,13 @@
 {
   "candidate": {
-    "headline": "<p>yo 12</p>",
-    "description": "<p>description rrrrr</p>",
+    "headline": "<p>yo 12bvnvbnv</p>",
+    "description": "<p>description 123</p>",
     "button1": {
       "bgColor": "coral",
       "textColor": "white"
     },
     "button2": {
-      "bgColor": "coral",
+      "bgColor": "#4CAF50",
       "textColor": "black"
     }
   }

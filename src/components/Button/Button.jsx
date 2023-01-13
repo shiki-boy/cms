@@ -8,7 +8,7 @@ import useWebsiteStore from '@/store/website'
 const Button = ( { isEditable = false, btnType } ) => {
   const button = useWebsiteStore( ( state ) => state[btnType] )
 
-  const changeButton = useWebsiteStore( ( state ) => state.changeButton )
+  const changeWebsiteData = useWebsiteStore( ( state ) => state.changeWebsiteData )
 
   return (
     <>
@@ -23,7 +23,7 @@ const Button = ( { isEditable = false, btnType } ) => {
         {isEditable && (
           <TooltipEdit
             changeBg={ ( bgColor ) =>
-              changeButton( {
+              changeWebsiteData( {
                 [btnType]: {
                   ...button,
                   bgColor,
@@ -31,7 +31,7 @@ const Button = ( { isEditable = false, btnType } ) => {
               } )
             }
             changeText={ ( textColor ) => {
-              changeButton( {
+              changeWebsiteData( {
                 [btnType]: {
                   ...button,
                   textColor,
