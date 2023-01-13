@@ -1,33 +1,31 @@
 import { useState } from 'react'
 
-import './Headline.scss'
+import './Description.scss'
 
 import RichTextEditor from '../RichTextEditor'
 import useWebsiteStore from '@/store/website'
 
-const Headline = () => {
-  const headline = useWebsiteStore( ( state ) => state.headline )
-
-  const changeHeadline = useWebsiteStore( ( state ) => state.changeHeadline )
+const Description = () => {
+  const description = useWebsiteStore( ( state ) => state.description )
+  const changeDescription = useWebsiteStore( ( state ) => state.changeDescription )
 
   const [ isEditing, setIsEditing ] = useState( false )
 
   // const [ value, setValue ] = useState( headline )
-
   return (
     <>
       {!isEditing && (
         <div
           className='text ck-content'
           onClick={ () => setIsEditing( true ) }
-          dangerouslySetInnerHTML={ { __html: headline } }
+          dangerouslySetInnerHTML={ { __html: description } }
         ></div>
       )}
 
       {isEditing && (
         <RichTextEditor
-          value={ headline }
-          save={ changeHeadline }
+          value={ description }
+          save={ changeDescription }
           onBlur={ () => setIsEditing( false ) }
         />
       )}
@@ -35,4 +33,4 @@ const Headline = () => {
   )
 }
 
-export default Headline
+export default Description

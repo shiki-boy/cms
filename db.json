@@ -1,0 +1,14 @@
+{
+  "candidate": {
+    "headline": "<p>yo 12</p>",
+    "description": "<p>description rrrrr</p>",
+    "button1": {
+      "bgColor": "coral",
+      "textColor": "black"
+    },
+    "button2": {
+      "bgColor": "#4CAF50",
+      "textColor": "white"
+    }
+  }
+}

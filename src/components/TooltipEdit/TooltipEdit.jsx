@@ -23,7 +23,7 @@ const TooltipEdit = ( { changeBg, changeText } ) => {
                 value='#4CAF50'
                 onChange={ ( { target } ) => changeBg( target.value ) }
               />
-              <label htmlFor='primary'>Primary: Green</label>
+              <label htmlFor='primary'>Green</label>
 
               <input
                 type='radio'
@@ -32,7 +32,7 @@ const TooltipEdit = ( { changeBg, changeText } ) => {
                 value='coral'
                 onChange={ ( { target } ) => changeBg( target.value ) }
               />
-              <label htmlFor='secondary'>secondary: Coral</label>
+              <label htmlFor='secondary'>Coral</label>
             </div>
 
             <div className='row'>

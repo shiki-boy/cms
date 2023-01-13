@@ -1,8 +1,9 @@
 import classNames from 'classnames'
 import { useState } from 'react'
-import TooltipEdit from '../TooltipEdit'
 
 import './Button.scss'
+
+import TooltipEdit from '../TooltipEdit'
 
 const Button = ( { value, isEditable = false } ) => {
   const [ data, setData ] = useState( value )
@@ -19,16 +20,16 @@ const Button = ( { value, isEditable = false } ) => {
         Green
         {isEditable && (
           <TooltipEdit
-            changeBg={ ( color ) =>
+            changeBg={ ( bgColor ) =>
               setData( ( old ) => ( {
                 ...old,
-                bgColor: color,
+                bgColor,
               } ) )
             }
-            changeText={ ( color ) =>
+            changeText={ ( textColor ) =>
               setData( ( old ) => ( {
                 ...old,
-                textColor: color,
+                textColor,
               } ) )
             }
           />

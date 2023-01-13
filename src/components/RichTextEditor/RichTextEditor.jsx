@@ -6,6 +6,7 @@ import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document'
 import './RichTextEditor.scss'
 
 import useOnClickOutside from '@/hooks/useOnClickOutside'
+import useDebounce from '@/hooks/useDebounce'
 
 // const editorConfiguration = { toolbar: [ 'bold', 'italic' ] }
 
@@ -16,6 +17,13 @@ const RichTextEditor = ( { value, save, onBlur } ) => {
   }, [] )
 
   const ref = useOnClickOutside( handleBlur, { forRichText: true } )
+
+  const x = useCallback(
+    ( data ) => save( data ),
+    [],
+  )
+
+  const debouncedSave = useDebounce( x )
 
   return (
     <div className='rich-text-edtior' ref={ ref }>
@@ -38,7 +46,7 @@ const RichTextEditor = ( { value, save, onBlur } ) => {
         onChange={ ( event, editor ) => {
           const data = editor.getData()
 
-          save( data )
+          debouncedSave( data )
         } }
       />
     </div>
