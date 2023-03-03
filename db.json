@@ -1,7 +1,7 @@
 {
   "candidate": {
     "headline": "<p>yo 12bvnvbnv</p>",
-    "description": "<p>description 123</p>",
+    "description": "<p>description 123</p><ol><li><i>pppp</i></li></ol><figure class=\"image\"><img></figure><p>&nbsp;</p>",
     "button1": {
       "bgColor": "coral",
       "textColor": "white"

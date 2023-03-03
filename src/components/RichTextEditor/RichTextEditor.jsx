@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
 import { useCallback } from 'react'
 import { CKEditor } from '@ckeditor/ckeditor5-react'
-import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document'
+// import DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document'
+import DecoupledDocumentEditor from 'ckeditor5-custom-build'
 
 import './RichTextEditor.scss'
 
 import useOnClickOutside from '@/hooks/useOnClickOutside'
 import useDebounce from '@/hooks/useDebounce'
+import editorConfig from './editorConfig'
 
 // const editorConfiguration = { toolbar: [ 'bold', 'italic' ] }
 
@@ -28,8 +30,8 @@ const RichTextEditor = ( { value, save, onBlur } ) => {
   return (
     <div className='rich-text-edtior' ref={ ref }>
       <CKEditor
-        editor={ DecoupledEditor }
-        // config={ editorConfiguration }
+        editor={ DecoupledDocumentEditor }
+        config={ editorConfig }
         data={ value }
         onReady={ ( editor ) => {
           // Insert the toolbar before the editable area.
